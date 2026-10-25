@@ -16,6 +16,7 @@
 #include "CrossPointSettings.h"
 #include "HapticFeedback.h"
 #include "OpdsServerStore.h"
+#include "apps/AppsActivity.h"
 #include "boot_sleep/BootActivity.h"
 #include "boot_sleep/SleepActivity.h"
 #include "browser/OpdsBookBrowserActivity.h"
@@ -312,6 +313,8 @@ void ActivityManager::goToLibrary() {
   replaceActivity(std::move(activity));
 }
 
+void ActivityManager::goToApps() { replaceActivity(std::make_unique<AppsActivity>(renderer, mappedInput)); }
+
 void ActivityManager::goToBrowser() {
   const auto& servers = OPDS_STORE.getServers();
   // Skip the server picker when there's only one server configured
@@ -371,6 +374,10 @@ void ActivityManager::goHome(HomeMenuItem initialMenuItem, bool cleanInitialRefr
       initialMenuItem = HomeMenuItem::OPDS_BROWSER;
     } else if (activityName == "CrossPointWebServer") {
       initialMenuItem = HomeMenuItem::FILE_TRANSFER;
+    } else if (activityName == "Apps" || activityName == "Wordle" || activityName == "Sudoku" ||
+               activityName == "Chess" || activityName == "Checkers" || activityName == "Clock" ||
+               activityName == "TicTacToe" || activityName == "Go") {
+      initialMenuItem = HomeMenuItem::APPS;
     } else if (activityName == "Settings" || activityName == "SettingsList") {
       initialMenuItem = HomeMenuItem::SETTINGS_MENU;
     }

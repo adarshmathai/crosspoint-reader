@@ -13,9 +13,11 @@
 
 #include "RecentBooksStore.h"
 #include "components/UITheme.h"
+#include "components/icons/apps.h"
 #include "components/icons/blocks.h"
 #include "components/icons/book.h"
 #include "components/icons/bookmark.h"
+#include "components/icons/calendar.h"
 #include "components/icons/cover.h"
 #include "components/icons/folder.h"
 #include "components/icons/hotspot.h"
@@ -60,6 +62,10 @@ const uint8_t* iconForName(UIIcon icon) {
       return BookmarkIcon;
     case UIIcon::Blocks:
       return BlocksIcon;
+    case UIIcon::Calendar:
+      return CalendarIcon;
+    case UIIcon::Apps:
+      return AppsIcon;
     default:
       return nullptr;
   }

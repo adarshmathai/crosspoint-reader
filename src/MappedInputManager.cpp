@@ -226,6 +226,16 @@ bool MappedInputManager::wasScreenTouchDown(int& x, int& y) const {
   return true;
 }
 
+bool MappedInputManager::isScreenTouchTapCandidate(int& x, int& y, unsigned long& heldMs) const {
+  float nx = 0.0f;
+  float ny = 0.0f;
+  if (!gpio.isTouchTapCandidate(nx, ny, heldMs)) return false;
+  renderer.tapToLogical(nx, ny, x, y);
+  return true;
+}
+
+void MappedInputManager::suppressCurrentTouchContact() const { gpio.suppressTouchContact(); }
+
 bool MappedInputManager::wasScreenLongPress(int& x, int& y) const {
   float nx = 0.0f;
   float ny = 0.0f;

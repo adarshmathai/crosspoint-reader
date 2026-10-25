@@ -64,6 +64,10 @@ class MappedInputManager {
   // Immediate press edge for drag handles, without the row-selection dwell.
   bool wasScreenTouchPressed(int& x, int& y) const;
   bool wasScreenTouchDown(int& x, int& y) const;
+  // Current stationary tap-candidate position and its held duration.
+  bool isScreenTouchTapCandidate(int& x, int& y, unsigned long& heldMs) const;
+  // Suppresses the rest of the active contact, including its eventual tap.
+  void suppressCurrentTouchContact() const;
   // One-shot long-press from the SDK touch classifier, fired WHILE the finger
   // is still down (stationary contact held past the SDK threshold). Consuming
   // it suppresses the remainder of the contact — its continued hold and its

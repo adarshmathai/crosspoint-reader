@@ -15,6 +15,7 @@ book = book
 file = file
 wifi = wifi
 library = library
+calendar = calendar-days
 blocks = blocks
 radio-tower = radio-tower
 sun = sun

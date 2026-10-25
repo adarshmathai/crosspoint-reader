@@ -1,0 +1,493 @@
+[1mdiff --git a/USER_GUIDE.md b/USER_GUIDE.md[m
+[1mindex 564a7223..8c4e596e 100644[m
+[1m--- a/USER_GUIDE.md[m
+[1m+++ b/USER_GUIDE.md[m
+[36m@@ -108,7 +108,7 @@[m [mUpon turning the device on for the first time, you will be placed on the **[Home[m
+ [m
+ ### 3.1 Home Screen[m
+ [m
+[31m-The Home screen is the main entry point to the firmware. From here you can navigate to **[Reading Mode](#4-reading-mode)** with the most recently read book, **[Browse Files](#33-browse-files-screen)**, the **[Library](#34-library-screen)**, **[File Transfer](#35-file-transfer-screen)**, or **[Settings](#36-settings)**.[m
+[32m+[m[32mThe Home screen is the main entry point to the firmware. From here you can navigate to **[Reading Mode](#4-reading-mode)** with the most recently read book, **[Browse Files](#33-browse-files-screen)**, the **[Library](#34-library-screen)**, **Apps**, **[File Transfer](#35-file-transfer-screen)**, or **[Settings](#36-settings)**. Apps includes Wordle, Sudoku, Chess, Checkers, Clock & Calendar, Tic-Tac-Toe, and Go.[m
+ [m
+ ### 3.2 Reading Mode[m
+ [m
+[1mdiff --git a/lib/I18n/translations/english.yaml b/lib/I18n/translations/english.yaml[m
+[1mindex e2d8db2c..0a25fcdb 100644[m
+[1m--- a/lib/I18n/translations/english.yaml[m
+[1m+++ b/lib/I18n/translations/english.yaml[m
+[36m@@ -9,6 +9,122 @@[m [mSTR_SLEEPING: "SLEEPING"[m
+ STR_ENTERING_SLEEP: "Going to sleep"[m
+ STR_BROWSE_FILES: "Browse Files"[m
+ STR_FILE_TRANSFER: "File Transfer"[m
+[32m+[m[32mSTR_APPS: "Apps"[m
+[32m+[m[32mSTR_GAME_WORDLE: "Wordle"[m
+[32m+[m[32mSTR_GAME_SUDOKU: "Sudoku"[m
+[32m+[m[32mSTR_GAME_NEW: "New game"[m
+[32m+[m[32mSTR_GAME_PLAYED: "Played"[m
+[32m+[m[32mSTR_GAME_WON: "Won"[m
+[32m+[m[32mSTR_GAME_STREAK: "Streak"[m
+[32m+[m[32mSTR_GAME_BEST: "Best"[m
+[32m+[m[32mSTR_WORDLE_ENTER: "Enter"[m
+[32m+[m[32mSTR_WORDLE_GIVE_UP: "Give up"[m
+[32m+[m[32mSTR_WORDLE_NOT_IN_LIST: "Not in the word list"[m
+[32m+[m[32mSTR_WORDLE_TOO_SHORT: "Not enough letters"[m
+[32m+[m[32mSTR_WORDLE_USE_ENGLISH_LETTERS: "Use English letters"[m
+[32m+[m[32mSTR_WORDLE_KEYBOARD_UNAVAILABLE: "Could not open the keyboard"[m
+[32m+[m[32mSTR_WORDLE_SOLVED_IN: "Solved in %d"[m
+[32m+[m[32mSTR_WORDLE_WORD_WAS: "The word was %s"[m
+[32m+[m[32mSTR_WORDLE_LOOK_UP: "Look up word"[m
+[32m+[m[32mSTR_WORDLE_NO_DICTIONARY: "No dictionary entry for this word"[m
+[32m+[m[32mSTR_SUDOKU_EASY: "Easy"[m
+[32m+[m[32mSTR_SUDOKU_MEDIUM: "Medium"[m
+[32m+[m[32mSTR_SUDOKU_HARD: "Hard"[m
+[32m+[m[32mSTR_SUDOKU_UNDO: "Undo"[m
+[32m+[m[32mSTR_SUDOKU_ERASE: "Erase"[m
+[32m+[m[32mSTR_SUDOKU_NOTES: "Notes"[m
+[32m+[m[32mSTR_SUDOKU_HINT: "Hint"[m
+[32m+[m[32mSTR_SUDOKU_NEW: "New puzzle"[m
+[32m+[m[32mSTR_SUDOKU_SOLVED: "Solved!"[m
+[32m+[m[32mSTR_SUDOKU_RESULT: "Time %s, mistakes %u, hints %u"[m
+[32m+[m[32mSTR_SUDOKU_BEST: "Best %s time: %s"[m
+[32m+[m[32mSTR_SUDOKU_FILL: "Fill"[m
+[32m+[m[32mSTR_APP_CLOCK: "Clock & Calendar"[m
+[32m+[m[32mSTR_GAME_CHESS: "Chess"[m
+[32m+[m[32mSTR_GAME_CHECKERS: "Checkers"[m
+[32m+[m[32mSTR_GAME_NEW_SHORT: "New"[m
+[32m+[m[32mSTR_GAME_OVER: "Game over"[m
+[32m+[m[32mSTR_GAME_COMPUTER: "Computer"[m
+[32m+[m[32mSTR_GAME_YOU: "You"[m
+[32m+[m[32mSTR_GAME_TWO_PLAYERS: "Two players"[m
+[32m+[m[32mSTR_GAME_START: "Start"[m
+[32m+[m[32mSTR_GAME_FLIP: "Flip"[m
+[32m+[m[32mSTR_GAME_THINKING: "Thinking..."[m
+[32m+[m[32mSTR_GAME_SEARCH_UNAVAILABLE: "Computer search unavailable"[m
+[32m+[m[32mSTR_GAME_YOUR_MOVE: "Your move"[m
+[32m+[m[32mSTR_GAME_DRAW: "Draw"[m
+[32m+[m[32mSTR_GAME_DRAW_REPEATED: "Draw - repeated position"[m
+[32m+[m[32mSTR_GAME_YOU_WIN: "You win"[m
+[32m+[m[32mSTR_GAME_YOU_LOSE: "You lose"[m
+[32m+[m[32mSTR_GAME_SIDE_WINS: "%s wins"[m
+[32m+[m[32mSTR_CHESS_WHITE: "White"[m
+[32m+[m[32mSTR_CHESS_BLACK: "Black"[m
+[32m+[m[32mSTR_CHESS_WHITE_TO_MOVE: "White to move"[m
+[32m+[m[32mSTR_CHESS_BLACK_TO_MOVE: "Black to move"[m
+[32m+[m[32mSTR_CHESS_CHECK: "Check"[m
+[32m+[m[32mSTR_CHESS_MATE_BY: "Checkmate - %s wins"[m
+[32m+[m[32mSTR_CHESS_MATE_WON: "Checkmate - you win"[m
+[32m+[m[32mSTR_CHESS_MATE_LOST: "Checkmate - you lose"[m
+[32m+[m[32mSTR_CHESS_STALEMATE: "Stalemate - draw"[m
+[32m+[m[32mSTR_CHESS_DRAW_FIFTY: "Draw - 50 moves without progress"[m
+[32m+[m[32mSTR_CHESS_DRAW_MATERIAL: "Draw - not enough pieces"[m
+[32m+[m[32mSTR_CHESS_MOVE_N: "Move %d"[m
+[32m+[m[32mSTR_CHECKERS_DARK: "Dark"[m
+[32m+[m[32mSTR_CHECKERS_LIGHT: "Light"[m
+[32m+[m[32mSTR_CHECKERS_DARK_FIRST: "Dark (first)"[m
+[32m+[m[32mSTR_CHECKERS_DARK_TO_MOVE: "Dark to move"[m
+[32m+[m[32mSTR_CHECKERS_LIGHT_TO_MOVE: "Light to move"[m
+[32m+[m[32mSTR_CHECKERS_MUST_CAPTURE: "You must capture"[m
+[32m+[m[32mSTR_CHECKERS_JUMP_AGAIN: "Jump again"[m
+[32m+[m[32mSTR_CHECKERS_PIECES: "%d pieces"[m
+[32m+[m[32mSTR_CHECKERS_SCORE: "%d against %d"[m
+[32m+[m[32mSTR_GAME_TICTACTOE: "Tic Tac Toe"[m
+[32m+[m[32mSTR_TTT_CLASSIC: "Classic"[m
+[32m+[m[32mSTR_TTT_INFINITE: "Infinite"[m
+[32m+[m[32mSTR_TTT_X_FIRST: "X (first)"[m
+[32m+[m[32mSTR_TTT_TO_MOVE: "%s to move"[m
+[32m+[m[32mSTR_TTT_DRAWS: "Draws"[m
+[32m+[m[32mSTR_TTT_PLAY_AGAIN: "Tap the board to play again"[m
+[32m+[m[32mSTR_TTT_OLDEST_LEAVES: "Three marks each. The faded one leaves next."[m
+[32m+[m[32mSTR_MONTH_1: "January"[m
+[32m+[m[32mSTR_MONTH_2: "February"[m
+[32m+[m[32mSTR_MONTH_3: "March"[m
+[32m+[m[32mSTR_MONTH_4: "April"[m
+[32m+[m[32mSTR_MONTH_5: "May"[m
+[32m+[m[32mSTR_MONTH_6: "June"[m
+[32m+[m[32mSTR_MONTH_7: "July"[m
+[32m+[m[32mSTR_MONTH_8: "August"[m
+[32m+[m[32mSTR_MONTH_9: "September"[m
+[32m+[m[32mSTR_MONTH_10: "October"[m
+[32m+[m[32mSTR_MONTH_11: "November"[m
+[32m+[m[32mSTR_MONTH_12: "December"[m
+[32m+[m[32mSTR_WEEKDAY_1: "Monday"[m
+[32m+[m[32mSTR_WEEKDAY_2: "Tuesday"[m
+[32m+[m[32mSTR_WEEKDAY_3: "Wednesday"[m
+[32m+[m[32mSTR_WEEKDAY_4: "Thursday"[m
+[32m+[m[32mSTR_WEEKDAY_5: "Friday"[m
+[32m+[m[32mSTR_WEEKDAY_6: "Saturday"[m
+[32m+[m[32mSTR_WEEKDAY_7: "Sunday"[m
+[32m+[m[32mSTR_CLOCK_DATE_FORMAT: "%s, %d %s %d"[m
+[32m+[m[32mSTR_CLOCK_WEEK: "Week %d"[m
+[32m+[m[32mSTR_CLOCK_NOT_SET: "The clock is not set"[m
+[32m+[m[32mSTR_CLOCK_NOT_SET_HINT: "Set it once in Settings with Sync Clock (needs Wi-Fi)."[m
+[32m+[m[32mSTR_GAME_GO: "Go"[m
+[32m+[m[32mSTR_GO_BLACK: "Black"[m
+[32m+[m[32mSTR_GO_WHITE: "White"[m
+[32m+[m[32mSTR_GO_BLACK_FIRST: "Black (first)"[m
+[32m+[m[32mSTR_GO_STATUS: "%dx%d, move %d"[m
+[32m+[m[32mSTR_GO_TAP_AGAIN: "Tap again to place"[m
+[32m+[m[32mSTR_GO_PASSED: "%s passed"[m
+[32m+[m[32mSTR_GO_TO_MOVE: "%s to move"[m
+[32m+[m[32mSTR_GO_MARK_DEAD: "Tap the dead stones, then Count"[m
+[32m+[m[32mSTR_GO_RESULT: "Black %d.%d, White %d.%d: %s wins by %d.%d"[m
+[32m+[m[32mSTR_GO_CAPTURES: "Captured %d"[m
+[32m+[m[32mSTR_GO_PLAY_ON: "Play on"[m
+[32m+[m[32mSTR_GO_COUNT: "Count"[m
+[32m+[m[32mSTR_GO_PASS: "Pass"[m
+[32m+[m[32mSTR_HOLD_FOR_NEW_GAME: "Hold to start a new game"[m
+[32m+[m[32mSTR_HOLD_TO_GIVE_UP: "Hold to give up"[m
+ STR_SETTINGS_TITLE: "Settings"[m
+ STR_CONTINUE_READING: "Continue Reading"[m
+ STR_RESUME: "Resume"[m
+[1mdiff --git a/scripts/convert_icon.py b/scripts/convert_icon.py[m
+[1mindex cea70268..5e9672cb 100644[m
+[1m--- a/scripts/convert_icon.py[m
+[1m+++ b/scripts/convert_icon.py[m
+[36m@@ -19,7 +19,11 @@[m [mdef load_image(path, width, height):[m
+     ext = os.path.splitext(path)[1].lower()[m
+     if ext == '.svg':[m
+         png_bytes = svg_to_png_bytes(path, width, height)[m
+[31m-        img = Image.open(io.BytesIO(png_bytes))[m
+[32m+[m[32m        img = Image.open(io.BytesIO(png_bytes)).convert('RGBA')[m
+[32m+[m[32m        # SVGs commonly have transparent backgrounds; flatten them like raster inputs.[m
+[32m+[m[32m        background = Image.new('RGBA', img.size, (255, 255, 255, 255))[m
+[32m+[m[32m        background.paste(img, mask=img.split()[3])[m
+[32m+[m[32m        img = background[m
+     else:[m
+         img = Image.open(path)[m
+         img = img.convert('RGBA')[m
+[1mdiff --git a/src/MappedInputManager.cpp b/src/MappedInputManager.cpp[m
+[1mindex 2366d274..99e3c2bc 100644[m
+[1m--- a/src/MappedInputManager.cpp[m
+[1m+++ b/src/MappedInputManager.cpp[m
+[36m@@ -226,6 +226,16 @@[m [mbool MappedInputManager::wasScreenTouchDown(int& x, int& y) const {[m
+   return true;[m
+ }[m
+ [m
+[32m+[m[32mbool MappedInputManager::isScreenTouchTapCandidate(int& x, int& y, unsigned long& heldMs) const {[m
+[32m+[m[32m  float nx = 0.0f;[m
+[32m+[m[32m  float ny = 0.0f;[m
+[32m+[m[32m  if (!gpio.isTouchTapCandidate(nx, ny, heldMs)) return false;[m
+[32m+[m[32m  renderer.tapToLogical(nx, ny, x, y);[m
+[32m+[m[32m  return true;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mvoid MappedInputManager::suppressCurrentTouchContact() const { gpio.suppressTouchContact(); }[m
+[32m+[m
+ bool MappedInputManager::wasScreenLongPress(int& x, int& y) const {[m
+   float nx = 0.0f;[m
+   float ny = 0.0f;[m
+[1mdiff --git a/src/MappedInputManager.h b/src/MappedInputManager.h[m
+[1mindex 9b596aa1..827f9654 100644[m
+[1m--- a/src/MappedInputManager.h[m
+[1m+++ b/src/MappedInputManager.h[m
+[36m@@ -64,6 +64,10 @@[m [mclass MappedInputManager {[m
+   // Immediate press edge for drag handles, without the row-selection dwell.[m
+   bool wasScreenTouchPressed(int& x, int& y) const;[m
+   bool wasScreenTouchDown(int& x, int& y) const;[m
+[32m+[m[32m  // Current stationary tap-candidate position and its held duration.[m
+[32m+[m[32m  bool isScreenTouchTapCandidate(int& x, int& y, unsigned long& heldMs) const;[m
+[32m+[m[32m  // Suppresses the rest of the active contact, including its eventual tap.[m
+[32m+[m[32m  void suppressCurrentTouchContact() const;[m
+   // One-shot long-press from the SDK touch classifier, fired WHILE the finger[m
+   // is still down (stationary contact held past the SDK threshold). Consuming[m
+   // it suppresses the remainder of the contact — its continued hold and its[m
+[1mdiff --git a/src/activities/ActivityManager.cpp b/src/activities/ActivityManager.cpp[m
+[1mindex 043a442b..a9e97c42 100644[m
+[1m--- a/src/activities/ActivityManager.cpp[m
+[1m+++ b/src/activities/ActivityManager.cpp[m
+[36m@@ -16,6 +16,7 @@[m
+ #include "CrossPointSettings.h"[m
+ #include "HapticFeedback.h"[m
+ #include "OpdsServerStore.h"[m
+[32m+[m[32m#include "apps/AppsActivity.h"[m
+ #include "boot_sleep/BootActivity.h"[m
+ #include "boot_sleep/SleepActivity.h"[m
+ #include "browser/OpdsBookBrowserActivity.h"[m
+[36m@@ -312,6 +313,8 @@[m [mvoid ActivityManager::goToLibrary() {[m
+   replaceActivity(std::move(activity));[m
+ }[m
+ [m
+[32m+[m[32mvoid ActivityManager::goToApps() { replaceActivity(std::make_unique<AppsActivity>(renderer, mappedInput)); }[m
+[32m+[m
+ void ActivityManager::goToBrowser() {[m
+   const auto& servers = OPDS_STORE.getServers();[m
+   // Skip the server picker when there's only one server configured[m
+[36m@@ -371,6 +374,10 @@[m [mvoid ActivityManager::goHome(HomeMenuItem initialMenuItem, bool cleanInitialRefr[m
+       initialMenuItem = HomeMenuItem::OPDS_BROWSER;[m
+     } else if (activityName == "CrossPointWebServer") {[m
+       initialMenuItem = HomeMenuItem::FILE_TRANSFER;[m
+[32m+[m[32m    } else if (activityName == "Apps" || activityName == "Wordle" || activityName == "Sudoku" ||[m
+[32m+[m[32m               activityName == "Chess" || activityName == "Checkers" || activityName == "Clock" ||[m
+[32m+[m[32m               activityName == "TicTacToe" || activityName == "Go") {[m
+[32m+[m[32m      initialMenuItem = HomeMenuItem::APPS;[m
+     } else if (activityName == "Settings" || activityName == "SettingsList") {[m
+       initialMenuItem = HomeMenuItem::SETTINGS_MENU;[m
+     }[m
+[1mdiff --git a/src/activities/ActivityManager.h b/src/activities/ActivityManager.h[m
+[1mindex e91cf261..8b70ef14 100644[m
+[1m--- a/src/activities/ActivityManager.h[m
+[1m+++ b/src/activities/ActivityManager.h[m
+[36m@@ -18,7 +18,7 @@[m
+ class Activity;    // forward declaration[m
+ class RenderLock;  // forward declaration[m
+ [m
+[31m-enum class HomeMenuItem { NONE, FILE_BROWSER, LIBRARY, OPDS_BROWSER, FILE_TRANSFER, SETTINGS_MENU };[m
+[32m+[m[32menum class HomeMenuItem { NONE, FILE_BROWSER, LIBRARY, OPDS_BROWSER, APPS, FILE_TRANSFER, SETTINGS_MENU };[m
+ [m
+ /**[m
+  * ActivityManager[m
+[36m@@ -91,6 +91,7 @@[m [mclass ActivityManager {[m
+   void goToSettings(SettingsSection openSection = SettingsSection::End);[m
+   void goToFileBrowser(std::string path = {});[m
+   void goToLibrary();[m
+[32m+[m[32m  void goToApps();[m
+   void goToBrowser();[m
+   void goToPlugins(bool showOpds);[m
+   void goToReader(std::string path, bool allowFastInitialRefresh = false);[m
+[1mdiff --git a/src/activities/home/HomeActivity.cpp b/src/activities/home/HomeActivity.cpp[m
+[1mindex dd2386c0..7935b46c 100644[m
+[1m--- a/src/activities/home/HomeActivity.cpp[m
+[1m+++ b/src/activities/home/HomeActivity.cpp[m
+[36m@@ -27,7 +27,7 @@[m
+ #include "fontIds.h"[m
+ [m
+ int HomeActivity::getMenuItemCount() const {[m
+[31m-  int count = 4;  // File Browser, Library, File transfer, Settings[m
+[32m+[m[32m  int count = 5;  // File Browser, Library, Apps, File transfer, Settings[m
+   if (!recentBooks.empty()) {[m
+     count += recentBooks.size();[m
+   }[m
+[36m@@ -324,6 +324,9 @@[m [mvoid HomeActivity::loop() {[m
+       case HomeMenuItem::FILE_TRANSFER:[m
+         onFileTransferOpen();[m
+         break;[m
+[32m+[m[32m      case HomeMenuItem::APPS:[m
+[32m+[m[32m        onAppsOpen();[m
+[32m+[m[32m        break;[m
+       case HomeMenuItem::SETTINGS_MENU:[m
+         onSettingsOpen();[m
+         break;[m
+[36m@@ -524,9 +527,9 @@[m [mvoid HomeActivity::render(RenderLock&&) {[m
+                           std::bind(&HomeActivity::storeCoverBuffer, this));[m
+ [m
+   // Build menu items dynamically[m
+[31m-  std::vector<const char*> menuItems = {tr(STR_BROWSE_FILES), tr(STR_LIBRARY), tr(STR_FILE_TRANSFER),[m
+[32m+[m[32m  std::vector<const char*> menuItems = {tr(STR_BROWSE_FILES), tr(STR_LIBRARY), tr(STR_APPS), tr(STR_FILE_TRANSFER),[m
+                                         tr(STR_SETTINGS_TITLE)};[m
+[31m-  std::vector<UIIcon> menuIcons = {Folder, Library, Transfer, Settings};[m
+[32m+[m[32m  std::vector<UIIcon> menuIcons = {Folder, Library, Apps, Transfer, Settings};[m
+ [m
+   if (hasLibrarySlot()) {[m
+     menuItems.insert(menuItems.begin() + 2, hasPlugins ? tr(STR_PLUGINS) : tr(STR_OPDS_BROWSER));[m
+[36m@@ -575,6 +578,8 @@[m [mvoid HomeActivity::onSettingsOpen() { activityManager.goToSettings(); }[m
+ [m
+ void HomeActivity::onFileTransferOpen() { activityManager.goToFileTransfer(); }[m
+ [m
+[32m+[m[32mvoid HomeActivity::onAppsOpen() { activityManager.goToApps(); }[m
+[32m+[m
+ void HomeActivity::onOpdsBrowserOpen() { activityManager.goToBrowser(); }[m
+ [m
+ void HomeActivity::onPluginsOpen() { activityManager.goToPlugins(hasOpdsServers); }[m
+[1mdiff --git a/src/activities/home/HomeActivity.h b/src/activities/home/HomeActivity.h[m
+[1mindex 181c8291..a0d4598a 100644[m
+[1m--- a/src/activities/home/HomeActivity.h[m
+[1m+++ b/src/activities/home/HomeActivity.h[m
+[36m@@ -47,6 +47,7 @@[m [mclass HomeActivity final : public Activity {[m
+     ++i;[m
+     if (item == HomeMenuItem::OPDS_BROWSER) return hasOpdsUrl ? i : 0;[m
+     if (hasOpdsUrl) ++i;[m
+[32m+[m[32m    if (item == HomeMenuItem::APPS) return i++;[m
+     if (item == HomeMenuItem::FILE_TRANSFER) return i;[m
+     ++i;[m
+     if (item == HomeMenuItem::SETTINGS_MENU) return i;[m
+[36m@@ -59,6 +60,7 @@[m [mclass HomeActivity final : public Activity {[m
+     if (idx == i++) return HomeMenuItem::FILE_BROWSER;[m
+     if (idx == i++) return HomeMenuItem::LIBRARY;[m
+     if (hasOpdsUrl && idx == i++) return HomeMenuItem::OPDS_BROWSER;[m
+[32m+[m[32m    if (idx == i++) return HomeMenuItem::APPS;[m
+     if (idx == i++) return HomeMenuItem::FILE_TRANSFER;[m
+     if (idx == i) return HomeMenuItem::SETTINGS_MENU;[m
+     return HomeMenuItem::NONE;[m
+[36m@@ -68,6 +70,7 @@[m [mclass HomeActivity final : public Activity {[m
+   void onLibraryOpen();[m
+   void onSettingsOpen();[m
+   void onFileTransferOpen();[m
+[32m+[m[32m  void onAppsOpen();[m
+   void onOpdsBrowserOpen();[m
+   void onPluginsOpen();[m
+ [m
+[1mdiff --git a/src/activities/util/KeyboardEntryActivity.cpp b/src/activities/util/KeyboardEntryActivity.cpp[m
+[1mindex f813303f..73bd769f 100644[m
+[1m--- a/src/activities/util/KeyboardEntryActivity.cpp[m
+[1m+++ b/src/activities/util/KeyboardEntryActivity.cpp[m
+[36m@@ -134,12 +134,13 @@[m [mconst fui::KeyboardLayout URL_SNIPPET_LAYOUT{URL_SNIP_ROWS, 4};[m
+ void KeyboardEntryActivity::onEnter() {[m
+   Activity::onEnter();[m
+   cursorPos = text.length();[m
+[31m-  // URL layers are EN-arranged app tables; everything else opens on the UI[m
+[31m-  // language's layout, or on an enabled one if the user switched that off.[m
+[31m-  layoutId = inputType == InputType::Url ? fui::KeyboardLayoutId::QwertyEn : keyboard_layouts::startingLayout();[m
+[32m+[m[32m  // URL and Latin-only fields use the EN layout; other text fields open on the[m
+[32m+[m[32m  // UI language's layout, or an enabled one if the user switched that off.[m
+[32m+[m[32m  layoutId = inputType == InputType::Url || inputType == InputType::LatinText ? fui::KeyboardLayoutId::QwertyEn[m
+[32m+[m[32m                                                                              : keyboard_layouts::startingLayout();[m
+   // The key only earns its slot in the bottom row with somewhere to go.[m
+   const uint16_t enabledLayouts = keyboard_layouts::enabled();[m
+[31m-  showLangKey = (enabledLayouts & (enabledLayouts - 1)) != 0;[m
+[32m+[m[32m  showLangKey = inputType != InputType::LatinText && (enabledLayouts & (enabledLayouts - 1)) != 0;[m
+   shifted = false;[m
+   symbols = false;[m
+   urlPanel = false;[m
+[1mdiff --git a/src/activities/util/KeyboardEntryActivity.h b/src/activities/util/KeyboardEntryActivity.h[m
+[1mindex 61823958..4e7213bb 100644[m
+[1m--- a/src/activities/util/KeyboardEntryActivity.h[m
+[1m+++ b/src/activities/util/KeyboardEntryActivity.h[m
+[36m@@ -10,7 +10,7 @@[m
+ #include "activities/Activity.h"[m
+ #include "util/ButtonNavigator.h"[m
+ [m
+[31m-enum class InputType { Text, Password, Url };[m
+[32m+[m[32menum class InputType { Text, LatinText, Password, Url };[m
+ [m
+ // Text entry on the FreeInkUI keyboard component: the SDK layout tables and[m
+ // keyboard() do the key rendering and hit-rect registration, InteractionBuffer[m
+[1mdiff --git a/src/components/CoverGridHomeUi.cpp b/src/components/CoverGridHomeUi.cpp[m
+[1mindex 355ad43f..2ffae0dd 100644[m
+[1m--- a/src/components/CoverGridHomeUi.cpp[m
+[1m+++ b/src/components/CoverGridHomeUi.cpp[m
+[36m@@ -10,6 +10,7 @@[m
+ [m
+ #include "MappedInputManager.h"[m
+ #include "UITheme.h"[m
+[32m+[m[32m#include "icons/apps.h"[m
+ #include "icons/blocks.h"[m
+ #include "icons/book.h"[m
+ #include "icons/folder.h"[m
+[36m@@ -283,9 +284,10 @@[m [mvoid CoverGridHomeUi::drawGrid(UiScreen& screen) {[m
+ }[m
+ [m
+ void CoverGridHomeUi::drawTabs(UiScreen& screen, fui::Rect rect) {[m
+[31m-  static constexpr const uint8_t* ICONS[] = {FolderIcon, LibraryIcon, BlocksIcon, TransferIcon, Settings2Icon};[m
+[32m+[m[32m  static constexpr const uint8_t* ICONS[] = {FolderIcon, LibraryIcon,  BlocksIcon,[m
+[32m+[m[32m                                             AppsIcon,   TransferIcon, Settings2Icon};[m
+   int count = 0;[m
+[31m-  for (int i = 0; i < 5; ++i) {[m
+[32m+[m[32m  for (int i = 0; i < 6; ++i) {[m
+     if (i == 2 && !hasOpds) continue;[m
+     auto& tab = tabItems[count];[m
+     tab.value = books->size() + count;[m
+[1mdiff --git a/src/components/CoverGridHomeUi.h b/src/components/CoverGridHomeUi.h[m
+[1mindex 181e0acb..86894347 100644[m
+[1m--- a/src/components/CoverGridHomeUi.h[m
+[1m+++ b/src/components/CoverGridHomeUi.h[m
+[36m@@ -60,5 +60,5 @@[m [mclass CoverGridHomeUi final : public UiAppHost {[m
+   freeink::ui::CoverGridProps grid;[m
+   freeink::ui::Rect gridBounds{};[m
+   freeink::ui::TabBarProps tabs;[m
+[31m-  std::array<freeink::ui::TabItem, 5> tabItems;[m
+[32m+[m[32m  std::array<freeink::ui::TabItem, 6> tabItems;[m
+ };[m
+[1mdiff --git a/src/components/UiAppHelpers.h b/src/components/UiAppHelpers.h[m
+[1mindex 525b236e..43c20f8a 100644[m
+[1m--- a/src/components/UiAppHelpers.h[m
+[1m+++ b/src/components/UiAppHelpers.h[m
+[36m@@ -107,6 +107,8 @@[m [minline freeink::ui::BitmapRef listIconFor(const UIIcon icon, const int size = 24[m
+         return freeink::ui::bitmapFromIcon(icon_usb_32);[m
+       case UIIcon::Bookmark:[m
+         return freeink::ui::bitmapFromIcon(icon_bookmark_32);[m
+[32m+[m[32m      case UIIcon::Calendar:[m
+[32m+[m[32m        return freeink::ui::bitmapFromIcon(icon_calendar_32);[m
+       case UIIcon::Blocks:[m
+         return freeink::ui::bitmapFromIcon(icon_blocks_32);[m
+       default:[m
+[36m@@ -136,6 +138,8 @@[m [minline freeink::ui::BitmapRef listIconFor(const UIIcon icon, const int size = 24[m
+       return freeink::ui::bitmapFromIcon(icon_usb_24);[m
+     case UIIcon::Bookmark:[m
+       return freeink::ui::bitmapFromIcon(icon_bookmark_24);[m
+[32m+[m[32m    case UIIcon::Calendar:[m
+[32m+[m[32m      return freeink::ui::bitmapFromIcon(icon_calendar_24);[m
+     case UIIcon::Blocks:[m
+       return freeink::ui::bitmapFromIcon(icon_blocks_24);[m
+     default:[m
+[1mdiff --git a/src/components/icons/listIcons.h b/src/components/icons/listIcons.h[m
+[1mindex c7e101bf..21ce5b50 100644[m
+[1m--- a/src/components/icons/listIcons.h[m
+[1m+++ b/src/components/icons/listIcons.h[m
+[36m@@ -124,6 +124,23 @@[m [mstatic const uint8_t icon_library_32_bits[] = {[m
+     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};[m
+ static const freeink::Icon icon_library_32 = {32, 32, 17, icon_library_32_bits};[m
+ [m
+[32m+[m[32m// calendar  (lucide: calendar-days)[m
+[32m+[m[32mstatic const uint8_t icon_calendar_24_bits[] = {[m
+[32m+[m[32m    0xFF, 0xFF, 0xFF, 0xFE, 0x7E, 0x7F, 0xFE, 0x7E, 0x7F, 0xF0, 0x00, 0x0F, 0xE0, 0x00, 0x07, 0xCE, 0x7E, 0x73,[m
+[32m+[m[32m    0xCE, 0x7E, 0x73, 0xCF, 0xFF, 0xF3, 0xCF, 0xFF, 0xF3, 0xC0, 0x00, 0x03, 0xC0, 0x00, 0x03, 0xCF, 0xFF, 0xF3,[m
+[32m+[m[32m    0xCF, 0xFF, 0xF3, 0xCE, 0x66, 0x73, 0xCE, 0x66, 0x73, 0xCF, 0xFF, 0xF3, 0xCF, 0xFF, 0xF3, 0xCE, 0x66, 0x73,[m
+[32m+[m[32m    0xCE, 0x66, 0x73, 0xCF, 0xFF, 0xF3, 0xCF, 0xFF, 0xF3, 0xE0, 0x00, 0x07, 0xF0, 0x00, 0x0F, 0xFF, 0xFF, 0xFF};[m
+[32m+[m[32mstatic const freeink::Icon icon_calendar_24 = {24, 24, 12, icon_calendar_24_bits};[m
+[32m+[m[32mstatic const uint8_t icon_calendar_32_bits[] = {[m
+[32m+[m[32m    0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xDF, 0xFB, 0xFF, 0xFF, 0x8F, 0xF1, 0xFF, 0xFF, 0x8F, 0xF1, 0xFF, 0xF8, 0x00, 0x00,[m
+[32m+[m[32m    0x1F, 0xF0, 0x00, 0x00, 0x0F, 0xE0, 0x00, 0x00, 0x07, 0xE7, 0x8F, 0xF1, 0xE7, 0xE7, 0xCF, 0xF3, 0xE7, 0xE7, 0xFF,[m
+[32m+[m[32m    0xFF, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE0, 0x00, 0x00, 0x07, 0xE0, 0x00, 0x00, 0x07, 0xE0,[m
+[32m+[m[32m    0x00, 0x00, 0x07, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xDF, 0xFB, 0xE7, 0xE7, 0x8E, 0x71, 0xE7,[m
+[32m+[m[32m    0xE7, 0xCE, 0x73, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xCE, 0x73,[m
+[32m+[m[32m    0xE7, 0xE7, 0xCE, 0x73, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE7, 0xFF, 0xFF, 0xE7, 0xE3, 0xFF, 0xFF, 0xC7, 0xE0, 0x00,[m
+[32m+[m[32m    0x00, 0x07, 0xF0, 0x00, 0x00, 0x0F, 0xFC, 0x00, 0x00, 0x3F, 0xFF, 0xFF, 0xFF, 0xFF};[m
+[32m+[m[32mstatic const freeink::Icon icon_calendar_32 = {32, 32, 16, icon_calendar_32_bits};[m
+[32m+[m
+ // blocks  (lucide: blocks)[m
+ static const uint8_t icon_blocks_24_bits[] = {[m
+     0xFF, 0xFF, 0xFF, 0xFF, 0xFC, 0x03, 0xFF, 0xF8, 0x01, 0xFF, 0xF9, 0xF9, 0xFF, 0xF9, 0xF9, 0xE0, 0x39, 0xF9,[m
+[1mdiff --git a/src/components/icons/listIcons.manifest b/src/components/icons/listIcons.manifest[m
+[1mindex d2b8287c..3f07c594 100644[m
+[1m--- a/src/components/icons/listIcons.manifest[m
+[1m+++ b/src/components/icons/listIcons.manifest[m
+[36m@@ -15,6 +15,7 @@[m [mbook = book[m
+ file = file[m
+ wifi = wifi[m
+ library = library[m
+[32m+[m[32mcalendar = calendar-days[m
+ blocks = blocks[m
+ radio-tower = radio-tower[m
+ sun = sun[m
+[1mdiff --git a/src/components/themes/BaseTheme.h b/src/components/themes/BaseTheme.h[m
+[1mindex 97270660..fcb325a4 100644[m
+[1m--- a/src/components/themes/BaseTheme.h[m
+[1m+++ b/src/components/themes/BaseTheme.h[m
+[36m@@ -147,7 +147,9 @@[m [menum UIIcon {[m
+   Hotspot,[m
+   Bookmark,[m
+   Usb,[m
+[31m-  Blocks[m
+[32m+[m[32m  Blocks,[m
+[32m+[m[32m  Calendar,[m
+[32m+[m[32m  Apps[m
+ };[m
+ [m
+ // Default theme implementation (Classic Theme)[m
+[1mdiff --git a/src/components/themes/lyra/LyraTheme.cpp b/src/components/themes/lyra/LyraTheme.cpp[m
+[1mindex 3db995c6..64424c58 100644[m
+[1m--- a/src/components/themes/lyra/LyraTheme.cpp[m
+[1m+++ b/src/components/themes/lyra/LyraTheme.cpp[m
+[36m@@ -13,9 +13,11 @@[m
+ [m
+ #include "RecentBooksStore.h"[m
+ #include "components/UITheme.h"[m
+[32m+[m[32m#include "components/icons/apps.h"[m
+ #include "components/icons/blocks.h"[m
+ #include "components/icons/book.h"[m
+ #include "components/icons/bookmark.h"[m
+[32m+[m[32m#include "components/icons/calendar.h"[m
+ #include "components/icons/cover.h"[m
+ #include "components/icons/folder.h"[m
+ #include "components/icons/hotspot.h"[m
+[36m@@ -60,6 +62,10 @@[m [mconst uint8_t* iconForName(UIIcon icon) {[m
+       return BookmarkIcon;[m
+     case UIIcon::Blocks:[m
+       return BlocksIcon;[m
+[32m+[m[32m    case UIIcon::Calendar:[m
+[32m+[m[32m      return CalendarIcon;[m
+[32m+[m[32m    case UIIcon::Apps:[m
+[32m+[m[32m      return AppsIcon;[m
+     default:[m
+       return nullptr;[m
+   }[m
