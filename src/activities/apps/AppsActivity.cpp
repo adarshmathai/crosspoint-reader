@@ -194,9 +194,9 @@ const char* AppsActivity::headerTitle() const { return tr(STR_APPS); }
 
 void AppsActivity::buildScreen(UiScreen& screen) {
   const auto& metrics = UITheme::getInstance().getMetrics();
-  screen.setContentMarginFromScreen(
-      fui::Insets{static_cast<int16_t>(metrics.topPadding + metrics.headerHeight), metrics.contentSidePadding,
-                  static_cast<int16_t>(metrics.buttonHintsHeight), metrics.contentSidePadding});
+  screen.setContentMarginFromScreen(fui::Insets{
+      static_cast<int16_t>(metrics.topPadding + metrics.headerHeight), static_cast<int16_t>(metrics.contentSidePadding),
+      static_cast<int16_t>(metrics.buttonHintsHeight), static_cast<int16_t>(metrics.contentSidePadding)});
   screen.spacer(static_cast<int16_t>(metrics.verticalSpacing));
 
   const int selected = nav.selected.load();

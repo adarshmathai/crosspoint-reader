@@ -9,7 +9,8 @@
 // Runs a board game's computer move on a task of its own. The search is deep
 // recursion and takes seconds: on the main task it would not fit the stack and
 // would freeze the Back button. The task ends by itself when the work is done.
-// While it runs, a screen refresh does not slow the processor down.
+// Callers keep full CPU speed by reporting active thinking through
+// Activity::preventAutoSleep().
 class GameThinker {
  public:
   using Work = void (*)(void* context);
